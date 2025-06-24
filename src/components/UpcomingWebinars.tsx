@@ -66,7 +66,7 @@ function UpcomingWebinars() {
             <div className="mt-10 text-center flex justify-center">
                 <Link href={'/'}>
                 <HoverBorderGradient
-                    containerClassName="rounded-lg"
+                    containerClassName="rounded-full"
                     as="button"
                     className="bg-black text-white flex shadow-lg items-center space-x-2">
 

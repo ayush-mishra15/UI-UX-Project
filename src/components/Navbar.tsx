@@ -1,6 +1,6 @@
 'use client'; //jab bhi ui manipulation karna ho ya react ka koi hook use krna ho toh hum isko use krte hai 
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
+import { Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 function Navbar({ className }: { className?: string }) {

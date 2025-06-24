@@ -30,7 +30,7 @@ const FeaturedCourses = () => {
             </div>
         </div>
         <div className="mt-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-7 justify-center">
                 {featuredCourses.map((course:Course)=>(
          <div key={course.id} className="flex justify-center">
           <BackgroundGradient
@@ -60,7 +60,7 @@ const FeaturedCourses = () => {
         <div className="mt-24 text-center flex justify-center">
             <Link href={"/courses"}>
                 <HoverBorderGradient
-                    containerClassName="rounded-lg"
+                    containerClassName="rounded-full"
                     as="button"
                     className="bg-black text-white shadow-lg flex items-center space-x-2">
 
