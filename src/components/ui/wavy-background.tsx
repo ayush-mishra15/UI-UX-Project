@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import React, { useEffect, useRef, useState } from "react";
 import { createNoise3D } from "simplex-noise";
 
-interface WavyBackgroundProps {
+interface WavyBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
@@ -13,7 +13,6 @@ interface WavyBackgroundProps {
   blur?: number;
   speed?: "slow" | "fast";
   waveOpacity?: number;
-  [key: string]: any;
 }
 
 export const WavyBackground: React.FC<WavyBackgroundProps> = ({

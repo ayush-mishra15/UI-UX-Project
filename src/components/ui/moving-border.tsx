@@ -71,13 +71,12 @@ export const MovingBorder = ({
   ry,
   className,
   ...otherProps
-}: {
+}: React.SVGProps<SVGSVGElement> & {
   children: React.ReactNode;
   duration?: number;
   rx?: string;
   ry?: string;
   className?: string;
-  [key: string]: any;
 }) => {
   const pathRef = useRef<SVGRectElement>(null);
   const progress = useMotionValue(0);

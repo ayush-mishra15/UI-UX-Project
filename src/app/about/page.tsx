@@ -18,7 +18,7 @@ const About = () => {
             initial={{ opacity: 0.5, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-            className="bg-gradient-to-br from-slate-100 to-slate-300 py-4 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl"
+            className="bg-gradient-to-br from-slate-100 to-slate-300 py-6 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl"
           >
             Start Building With Code
           </motion.h1>
@@ -38,12 +38,12 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="mt-20 text-3xl font-semibold text-cyan-400"
+            className="mt-20 text-4xl font-semibold text-cyan-400"
           >
             We aim to{" "}
             <FlipWords
               words={["educate", "mentor", "empower"]}
-            />{" "}through code.
+            />{""}through code.
           </motion.div>
         </div>
       </LampContainer>

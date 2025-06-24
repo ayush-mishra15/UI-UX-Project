@@ -94,7 +94,7 @@ export function CardItem<T extends React.ElementType = "div">({
   }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
   return (
-    <Tag ref={ref as any} className={cn("w-fit transition duration-200 ease-linear", className)} {...(rest as any)}>
+    <Tag ref={ref as React.Ref<HTMLElement>} className={cn("w-fit transition duration-200 ease-linear", className)} {...(rest as any)}>
       {children}
     </Tag>
   );
