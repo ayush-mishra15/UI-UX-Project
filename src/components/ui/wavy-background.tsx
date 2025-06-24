@@ -43,14 +43,14 @@ export const WavyBackground: React.FC<WavyBackgroundProps> = ({
   }, []);
 
   useEffect(() => {
-    let ctx: CanvasRenderingContext2D;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d")!;
     let w: number, h: number;
     let nt = 0;
     let animationId: number;
 
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    ctx = canvas.getContext("2d")!;
     ctx.filter = `blur(${blur}px)`;
 
     const resize = () => {

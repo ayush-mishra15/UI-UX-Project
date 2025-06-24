@@ -27,7 +27,7 @@ function Page() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <CardContainer className="inter-var m-6">
+            <CardContainer className="inter-var m-5">
               <CardBody className="relative group/card hover:shadow-2xl hover:shadow-emerald-500/[0.1] bg-black border-white/[0.2] w-auto sm:w-[22rem] h-auto rounded-xl p-4 border transition-all duration-300">
                 <CardItem translateZ={50} className="text-xl font-bold text-white">
                   {course.title}

@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { cn } from "@/utils/cn";
 
+// ✅ Button component
 export function Button({
   borderRadius = "1.75rem",
   children,
@@ -26,7 +27,7 @@ export function Button({
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown; // ✅ no 'any'
 }) {
   return (
     <Component
@@ -64,6 +65,7 @@ export function Button({
   );
 }
 
+// ✅ MovingBorder component
 export const MovingBorder = ({
   children,
   duration = 3000,
@@ -76,9 +78,8 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  className?: string;
 }) => {
-  const pathRef = useRef<SVGRectElement>(null);
+  const pathRef = useRef<SVGRectElement | null>(null); // ✅ no 'any'
   const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {

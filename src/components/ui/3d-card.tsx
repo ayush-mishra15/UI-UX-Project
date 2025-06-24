@@ -1,6 +1,12 @@
 "use client";
 import { cn } from "@/utils/cn";
-import React, { createContext, useState, useContext, useRef, useEffect } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 // Context definition
 type MouseEnterContextType = [boolean, React.Dispatch<React.SetStateAction<boolean>>];
@@ -49,7 +55,10 @@ export const CardContainer: React.FC<{
 };
 
 // Body wrapper
-export const CardBody: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className }) => (
+export const CardBody: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => (
   <div className={cn("h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]", className)}>
     {children}
   </div>
@@ -66,7 +75,7 @@ type CardItemProps<T extends React.ElementType> = {
   rotateZ?: number;
   className?: string;
   children: React.ReactNode;
-} & React.ComponentPropsWithoutRef<T>;
+} & Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'children' | 'className'>;
 
 export function CardItem<T extends React.ElementType = "div">({
   as,
@@ -80,7 +89,7 @@ export function CardItem<T extends React.ElementType = "div">({
   rotateZ = 0,
   ...rest
 }: CardItemProps<T>) {
-  const Tag = as || ("div" as T);
+  const Tag = as || "div";
   const ref = useRef<HTMLElement>(null);
   const [isMouseEntered] = useContext(MouseEnterContext)!;
 
@@ -94,7 +103,11 @@ export function CardItem<T extends React.ElementType = "div">({
   }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
   return (
-    <Tag ref={ref as React.Ref<HTMLElement>} className={cn("w-fit transition duration-200 ease-linear", className)} {...(rest as any)}>
+    <Tag
+      ref={ref as React.Ref<any>}
+      className={cn("w-fit transition duration-200 ease-linear", className)}
+      {...rest}
+    >
       {children}
     </Tag>
   );
