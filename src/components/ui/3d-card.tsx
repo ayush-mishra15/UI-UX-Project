@@ -104,7 +104,7 @@ export function CardItem<T extends React.ElementType = "div">({
 
   return (
     <Tag
-      ref={ref as React.Ref<any>}
+      ref={ref as React.Ref<null>}
       className={cn("w-fit transition duration-200 ease-linear", className)}
       {...rest}
     >
