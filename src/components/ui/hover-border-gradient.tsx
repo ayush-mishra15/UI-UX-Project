@@ -22,7 +22,7 @@ export const HoverBorderGradient: React.FC<
   containerClassName,
   className,
   as: Tag = "button",
-  duration = 0.7,
+  duration = 0.4,
   clockwise = true,
   ...props
 }) => {

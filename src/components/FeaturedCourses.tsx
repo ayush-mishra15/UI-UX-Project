@@ -32,9 +32,9 @@ const FeaturedCourses = () => {
         <div className="mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-7 justify-center">
                 {featuredCourses.map((course:Course)=>(
-         <div key={course.id} className="flex justify-center">
+         <div key={course.id} className="flex justify-center mb-6">
           <BackgroundGradient
-            className="flex flex-col rounded-2xl bg-zinc-900 overflow-hidden h-full w-[270px] sm:w-[300px]"
+            className="flex flex-col rounded-2xl bg-zinc-900 overflow-hidden h-full w-[300px] sm:w-[300px] mb-3.5"
           >
             <img
               src={course.image}
@@ -44,7 +44,7 @@ const FeaturedCourses = () => {
               className="object-cover w-full"
             />
 
-            <div className="p-4 sm:p-5 flex flex-col items-center text-center flex-grow">
+            <div className="p-4 sm:p-4 flex flex-col items-center text-center flex-grow">
               <p className="text-base sm:text-lg mt-2 mb-1 text-neutral-200">{course.title}</p>
               <p className="text-sm text-neutral-400">{course.description}</p>
               <Link href={`/`} className="mt-2 text-cyan-500 hover:text-cyan-600">
